@@ -1,0 +1,298 @@
+{
+ "actions": [],
+ "autoname": "format:{date}-{short_name}",
+ "creation": "2022-07-11 13:36:28.447866",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sb12",
+  "naming_series",
+  "employee",
+  "department",
+  "device_id",
+  "short_name",
+  "column_break_3",
+  "date",
+  "day",
+  "shift_name",
+  "column_break_7",
+  "in_time",
+  "out_time",
+  "nddl",
+  "cb_02",
+  "late_in",
+  "early_out",
+  "total_rs_vm",
+  "sb_03",
+  "annual_leave",
+  "section_break_24",
+  "biz_trip",
+  "skip_go_to_company",
+  "cb_06",
+  "project_biz",
+  "cb_07",
+  "content_biz",
+  "sb_07",
+  "overtime",
+  "column_break_28",
+  "project_overtime",
+  "cb_09",
+  "content_overtime"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "BCC-.{employee}.-.{date}."
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "H\u1ecd t\u00ean",
+   "options": "IUNI Employee",
+   "permlevel": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Ph\u00f2ng ban",
+   "options": "IUNI Department",
+   "permlevel": 1
+  },
+  {
+   "fetch_from": "employee.attendance_device_id",
+   "fieldname": "device_id",
+   "fieldtype": "Data",
+   "label": "Device ID"
+  },
+  {
+   "fetch_from": "employee.short_name",
+   "fieldname": "short_name",
+   "fieldtype": "Data",
+   "label": "T\u00ean vi\u1ebft t\u1eaft"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Ng\u00e0y c\u00f4ng",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "day",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Th\u1ee9",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "shift_name",
+   "fieldtype": "Data",
+   "label": "T\u00ean ca",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "in_time",
+   "fieldtype": "Time",
+   "label": "Gi\u1edd v\u00e0o",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "out_time",
+   "fieldtype": "Time",
+   "label": "Gi\u1edd ra",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "nddl",
+   "fieldtype": "Table MultiSelect",
+   "label": "N\u1ed9i dung duy\u1ec7t l\u1ed7i",
+   "options": "IUNI Duyet loi ct"
+  },
+  {
+   "fieldname": "cb_02",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "late_in",
+   "fieldtype": "Data",
+   "label": "V\u00e0o tr\u1ec5 (ph\u00fat)",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "early_out",
+   "fieldtype": "Data",
+   "label": "Ra s\u1edbm (ph\u00fat)",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "total_rs_vm",
+   "fieldtype": "Data",
+   "label": "T\u1ed5ng v\u00e0o tr\u1ec5/ ra s\u1edbm (ph\u00fat)"
+  },
+  {
+   "fieldname": "sb_03",
+   "fieldtype": "Section Break",
+   "label": "\u0110\u0103ng k\u00fd Ngh\u1ec9 ph\u00e9p (NP)"
+  },
+  {
+   "fieldname": "annual_leave",
+   "fieldtype": "Select",
+   "label": "NP (ng\u00e0y)",
+   "options": "\n0.25\n0.5\n1"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break",
+   "label": "\u0110\u0103ng k\u00fd C\u00f4ng t\u00e1c (CT)"
+  },
+  {
+   "fieldname": "biz_trip",
+   "fieldtype": "Select",
+   "label": "CT",
+   "options": "\nQua \u0111\u00eam (1 \u0111\u00eam)\nTrong ng\u00e0y (1 ng\u00e0y)\nTrong ng\u00e0y (s\u00e1ng)\nTrong ng\u00e0y (chi\u1ec1u)"
+  },
+  {
+   "default": "0",
+   "fieldname": "skip_go_to_company",
+   "fieldtype": "Check",
+   "label": "Kh\u00f4ng gh\u00e9 c\u00f4ng ty"
+  },
+  {
+   "fieldname": "cb_06",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Qua \u0111\u00eam (1 \u0111\u00eam)\",\"Trong ng\u00e0y (1 ng\u00e0y)\",\"Trong ng\u00e0y (s\u00e1ng)\",\"Trong ng\u00e0y (chi\u1ec1u)\"], doc.biz_trip))",
+   "fieldname": "project_biz",
+   "fieldtype": "Link",
+   "label": "M\u00e3 d\u1ef1 \u00e1n (CT)",
+   "options": "IUNI Project"
+  },
+  {
+   "fieldname": "cb_07",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Qua \u0111\u00eam (1 \u0111\u00eam)\",\"Trong ng\u00e0y (1 ng\u00e0y)\",\"Trong ng\u00e0y (s\u00e1ng)\",\"Trong ng\u00e0y (chi\u1ec1u)\"], doc.biz_trip))",
+   "fieldname": "content_biz",
+   "fieldtype": "Data",
+   "label": "N\u1ed9i dung CT"
+  },
+  {
+   "fieldname": "sb_07",
+   "fieldtype": "Section Break",
+   "label": "\u0110\u0103ng k\u00fd L\u00e0m ngo\u00e0i gi\u1edd (LNG)"
+  },
+  {
+   "fieldname": "overtime",
+   "fieldtype": "Select",
+   "label": "LNG (ng\u00e0y)",
+   "options": "\n0.5\n1"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(in_list([\"0.25\", \"0.5\", \"1\"], doc.overtime))",
+   "fieldname": "project_overtime",
+   "fieldtype": "Link",
+   "label": "M\u00e3 d\u1ef1 \u00e1n (LNG)",
+   "options": "IUNI Project"
+  },
+  {
+   "fieldname": "cb_09",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(in_list([\"0.25\", \"0.5\", \"1\"], doc.overtime))",
+   "fieldname": "content_overtime",
+   "fieldtype": "Data",
+   "label": "N\u1ed9i dung LNG"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-20 08:59:30.134468",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Bang Cham Cong",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Employee",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "IUNI Employee",
+   "select": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

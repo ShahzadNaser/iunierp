@@ -1,44 +1,33 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2022-07-15 09:50:35.990212",
+ "autoname": "format:{htdk}-{nddk}",
+ "creation": "2022-07-23 11:10:06.557205",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "field1",
-  "field2",
-  "amended_from"
+  "htdk",
+  "nddk"
  ],
  "fields": [
   {
-   "fieldname": "field1",
+   "fieldname": "htdk",
    "fieldtype": "Data",
-   "label": "field1"
+   "label": "H\u00ecnh th\u1ee9c \u0111\u0103ng k\u00ed"
   },
   {
-   "fieldname": "field2",
-   "fieldtype": "Link",
-   "label": "field2",
-   "options": "IUNI Project"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Test Lab IUNI 2",
-   "print_hide": 1,
-   "read_only": 1
+   "fieldname": "nddk",
+   "fieldtype": "Data",
+   "label": "N\u1ed9i dung"
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2022-08-20 08:59:20.936231",
+ "modified": "2022-08-20 08:59:30.675810",
  "modified_by": "Administrator",
  "module": "Iunierp",
- "name": "Test Lab IUNI 2",
+ "name": "IUNI Duyet loi",
  "owner": "Administrator",
  "permissions": [
   {
