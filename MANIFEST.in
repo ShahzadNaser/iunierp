@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include iunierp *.css
+recursive-include iunierp *.csv
+recursive-include iunierp *.html
+recursive-include iunierp *.ico
+recursive-include iunierp *.js
+recursive-include iunierp *.json
+recursive-include iunierp *.md
+recursive-include iunierp *.png
+recursive-include iunierp *.py
+recursive-include iunierp *.svg
+recursive-include iunierp *.txt
+recursive-exclude iunierp *.pyc
