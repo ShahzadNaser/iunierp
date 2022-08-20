@@ -1,0 +1,271 @@
+{
+ "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_import": 1,
+ "autoname": "format:{short_name}-{YY}{MM}{DD}-{#}",
+ "creation": "2021-12-10 10:31:34.877323",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "date_dn",
+  "id_nguoi_dn",
+  "last_name",
+  "first_name",
+  "short_name",
+  "department",
+  "link_tu",
+  "sl_01",
+  "hinh_thuc",
+  "dn_is_not_receive",
+  "bank_name_dn",
+  "stk_dn",
+  "sb_03",
+  "designation",
+  "sb_001",
+  "real_amount",
+  "cb_01",
+  "received_amount",
+  "cb_02",
+  "after_amount",
+  "column_break_22",
+  "actual_payment_date",
+  "sb_01",
+  "detail",
+  "sb_2",
+  "note",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": ".{first_name}. .{last_name}.-.{date_dn}.-.##"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_dn",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Ng\u00e0y \u0111\u1ec1 ngh\u1ecb",
+   "read_only": 1
+  },
+  {
+   "fieldname": "id_nguoi_dn",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Ng\u01b0\u1eddi \u0111\u1ec1 ngh\u1ecb",
+   "options": "IUNI Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "id_nguoi_dn.first_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "H\u1ecd \u0110\u1ec7m"
+  },
+  {
+   "fetch_from": "id_nguoi_dn.last_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "T\u00ean"
+  },
+  {
+   "fetch_from": "id_nguoi_dn.short_name",
+   "fieldname": "short_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "T\u00ean vi\u1ebft t\u1eaft",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "id_nguoi_dn.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Ph\u00f2ng ban",
+   "options": "IUNI Department",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:(in_list([\"Ho\u00e0n \u1ee9ng\"], doc.hinh_thuc))",
+   "fieldname": "link_tu",
+   "fieldtype": "Link",
+   "label": "Link s\u1ed1 t\u1ea1m \u1ee9ng",
+   "mandatory_depends_on": "eval:(in_list([\"Ho\u00e0n \u1ee9ng\"], doc.hinh_thuc))",
+   "options": "IUNI De nghi thanh toan"
+  },
+  {
+   "fieldname": "sl_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hinh_thuc",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "H\u00ecnh th\u1ee9c \u0111\u1ec1 ngh\u1ecb",
+   "options": "Thanh to\u00e1n\nT\u1ea1m \u1ee9ng\nHo\u00e0n \u1ee9ng",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "dn_is_not_receive",
+   "fieldtype": "Check",
+   "label": "Ng\u01b0\u1eddi nh\u1eadn ti\u1ec1n kh\u00f4ng ph\u1ea3i ng\u01b0\u1eddi \u0111\u1ec1 ngh\u1ecb"
+  },
+  {
+   "fetch_from": "id_nguoi_dn.bank_name",
+   "fieldname": "bank_name_dn",
+   "fieldtype": "Data",
+   "label": "Ng\u00e2n h\u00e0ng"
+  },
+  {
+   "fetch_from": "id_nguoi_dn.bank_ac_no",
+   "fieldname": "stk_dn",
+   "fieldtype": "Data",
+   "label": "T\u00e0i kho\u1ea3n"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_03",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Th\u00f4ng tin ng\u01b0\u1eddi \u0111\u1ec1 ngh\u1ecb"
+  },
+  {
+   "fetch_from": "id_nguoi_dn.grade",
+   "fieldname": "designation",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "Ch\u1ee9c v\u1ee5"
+  },
+  {
+   "fieldname": "sb_001",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "real_amount",
+   "fieldtype": "Float",
+   "label": "T\u1ed5ng ti\u1ec1n",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Ho\u00e0n \u1ee9ng\"], doc.hinh_thuc))",
+   "fetch_from": "link_tu.real_amount",
+   "fieldname": "received_amount",
+   "fieldtype": "Float",
+   "label": "\u0110\u00e3 t\u1ea1m \u1ee9ng",
+   "precision": "0"
+  },
+  {
+   "fieldname": "cb_02",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Ho\u00e0n \u1ee9ng\"], doc.hinh_thuc))",
+   "description": "(Sau khi tr\u1eeb t\u1ea1m \u1ee9ng)",
+   "fieldname": "after_amount",
+   "fieldtype": "Float",
+   "label": "T\u1ed5ng thanh to\u00e1n",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "real_amount",
+   "fieldname": "actual_payment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Ng\u00e0y thanh to\u00e1n"
+  },
+  {
+   "fieldname": "sb_01",
+   "fieldtype": "Section Break",
+   "label": "Chi ti\u1ebft \u0111\u1ec1 ngh\u1ecb"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "detail",
+   "fieldtype": "Table",
+   "label": "Chi ti\u1ebft",
+   "options": "IUNI Chi tiet de nghi",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text",
+   "label": "Ghi ch\u00fa"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IUNI De nghi thanh toan",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:03.570947",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI De nghi thanh toan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Employee",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "id_nguoi_dn,date_dn,hinh_thuc",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

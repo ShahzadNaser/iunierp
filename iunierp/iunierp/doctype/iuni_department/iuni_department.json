@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:department",
+ "creation": "2022-06-22 09:29:27.562541",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "company",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_iuni_department"
+ ],
+ "fields": [
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ph\u00f2ng Ban",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "C\u00f4ng ty",
+   "options": "Company"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "IUNI Department"
+  },
+  {
+   "fieldname": "parent_iuni_department",
+   "fieldtype": "Link",
+   "label": "Parent IUNI Department",
+   "options": "IUNI Department"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:11.570859",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Department",
+ "name_case": "UPPER CASE",
+ "nsm_parent_field": "parent_iuni_department",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

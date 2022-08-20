@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-09 09:00:59.081302",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "content",
+  "before_change",
+  "after_change"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "content",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Content"
+  },
+  {
+   "columns": 3,
+   "fieldname": "before_change",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Before changing"
+  },
+  {
+   "columns": 3,
+   "fieldname": "after_change",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "After changing"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:14.244137",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Contract Changing Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

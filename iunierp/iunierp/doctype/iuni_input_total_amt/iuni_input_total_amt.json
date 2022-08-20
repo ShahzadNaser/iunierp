@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "creation": "2021-12-13 18:34:09.530356",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tt_amt",
+  "per_tax",
+  "tax",
+  "amt_a_tax",
+  "invoice_amt",
+  "invoice_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "tt_amt",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Amt Before Tax",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "per_tax",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Tax",
+   "precision": "4",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "tax",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tax Amt",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "amt_a_tax",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Amt After Tax",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "invoice_amt",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Invoice Amt"
+  },
+  {
+   "columns": 2,
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Invoice date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IUNI Input Total Amt",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:13.155788",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Input Total Amt",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

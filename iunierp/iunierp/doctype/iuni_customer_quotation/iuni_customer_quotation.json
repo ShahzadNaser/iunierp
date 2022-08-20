@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CQ-{project_name}-{customer_name}-{posting_date}",
+ "creation": "2022-06-07 16:00:20.254326",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "customer_name",
+  "project_name",
+  "detail",
+  "note",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "IUNI Customer"
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "IUNI Project"
+  },
+  {
+   "fieldname": "detail",
+   "fieldtype": "Table",
+   "label": "Detail",
+   "options": "IUNI Customer Quotation Item"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text",
+   "label": "Ghi ch\u00fa"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IUNI Customer Quotation",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:08.968664",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Customer Quotation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

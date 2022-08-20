@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SQ-{project_name}-{supplier_name}-{posting_date}",
+ "creation": "2022-06-07 16:08:08.227671",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "supplier_name",
+  "project_name",
+  "detail",
+  "note",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "IUNI Project"
+  },
+  {
+   "fieldname": "detail",
+   "fieldtype": "Table",
+   "label": "Detail",
+   "options": "IUNI Supplier Quotation Item"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text",
+   "label": "Ghi ch\u00fa"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IUNI Supplier Quotaiton",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:09.507787",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Supplier Quotaiton",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

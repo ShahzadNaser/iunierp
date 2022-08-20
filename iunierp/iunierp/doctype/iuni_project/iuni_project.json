@@ -1,0 +1,486 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:project_code",
+ "creation": "2022-04-28 14:50:08.178905",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "project_code",
+  "project_name",
+  "project_type",
+  "role",
+  "column_break_5",
+  "status",
+  "company_1",
+  "original_pj_code",
+  "column_break_7",
+  "technician_on_top",
+  "admin_on_top",
+  "column_break_9",
+  "customer_code",
+  "eu_code",
+  "original_customer_code",
+  "priority",
+  "percent_complete_method",
+  "percent_complete",
+  "department",
+  "section_break_19",
+  "html_19",
+  "eu_detail",
+  "customer_name",
+  "customer_contact",
+  "column_break_18",
+  "eu_name",
+  "address_contact_eu",
+  "customer_details",
+  "customer_bank_account",
+  "customer_bank_name",
+  "users_section",
+  "section_break_18",
+  "contract_id",
+  "contract_start_date",
+  "contract_end_date",
+  "payment_guarantee_end_date",
+  "actual_time",
+  "column_break_20",
+  "deployment_place",
+  "sow_list",
+  "b\u1ea3n_v\u1ebd_tktc_chi_ti\u1ebft",
+  "column_break_39",
+  "document_eu",
+  "acceptance_document",
+  "column_break_42",
+  "onsite_warranty_iuni",
+  "onsite_support_iuni",
+  "warranty_customers_products",
+  "warranty_end_date",
+  "support_end_date",
+  "section_break0",
+  "notes",
+  "company1"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name",
+   "oldfieldtype": "Data",
+   "unique": 1
+  },
+  {
+   "fieldname": "project_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Type",
+   "oldfieldname": "project_type",
+   "oldfieldtype": "Data",
+   "options": "\nMixed\nInfras\nSystem\nNetwork\nSales\nTraining\nMaintenance\nSupport\nOther\nPh\u1ee5\nIntergration"
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Link",
+   "label": "Role",
+   "options": "Role"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Kh\u1ea3o s\u00e1t",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Project Status",
+   "no_copy": 1,
+   "oldfieldname": "status",
+   "oldfieldtype": "Select",
+   "options": "Kh\u1ea3o s\u00e1t\nD\u1ef1 to\u00e1n\nB\u00e1o gi\u00e1\nTh\u1ea7u\nH\u1ee3p \u0111\u1ed3ng\n\u0110\u1eb7t h\u00e0ng\nTri\u1ec3n khai\nNghi\u1ec7m thu\nB\u1ea3o h\u00e0nh/ B\u1ea3o tr\u00ec/ HTKT\nClosed\nFailed",
+   "search_index": 1
+  },
+  {
+   "default": "IUNI JSC",
+   "fieldname": "company_1",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "original_pj_code",
+   "fieldtype": "Data",
+   "label": "Original Project Code"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "technician_on_top",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "PM"
+  },
+  {
+   "fieldname": "admin_on_top",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Admin On Top"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_code",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Code",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "eu_code",
+   "fieldtype": "Link",
+   "label": "End User Code",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "customer_code.original_customer_code",
+   "fieldname": "original_customer_code",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "label": "Original Customer Code",
+   "oldfieldname": "customer",
+   "oldfieldtype": "Link",
+   "options": "Customer",
+   "print_hide": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "Priority",
+   "oldfieldname": "priority",
+   "oldfieldtype": "Select",
+   "options": "Medium\nLow\nHigh"
+  },
+  {
+   "fieldname": "percent_complete_method",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "% Complete Method",
+   "options": "Task Completion\nTask Progress\nTask Weight"
+  },
+  {
+   "fieldname": "percent_complete",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "% Complete"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_19",
+   "fieldtype": "Table",
+   "label": "Contract List",
+   "options": "IUNI Project Contract List Detail"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "eu_detail",
+   "fieldtype": "Section Break",
+   "label": "Th\u00f4ng Tin Li\u00ean H\u1ec7"
+  },
+  {
+   "fetch_from": "customer_code.customer_name2",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "customer_contact",
+   "fieldtype": "Table",
+   "label": "Customer Contact",
+   "options": "IUNI Project Customer Infor"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "eu_code.customer_name2",
+   "fieldname": "eu_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "End Users Name"
+  },
+  {
+   "fieldname": "address_contact_eu",
+   "fieldtype": "Table",
+   "label": "End User Contact",
+   "options": "IUNI Project EU infor"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "customer_details",
+   "fieldtype": "Section Break",
+   "label": "Th\u00f4ng Tin Kh\u00e1ch H\u00e0ng",
+   "oldfieldtype": "Section Break",
+   "options": "fa fa-user"
+  },
+  {
+   "fetch_from": "customer_name.bank_acc_no",
+   "fieldname": "customer_bank_account",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Customer Bank Account"
+  },
+  {
+   "fetch_from": "customer_name.bank_name",
+   "fieldname": "customer_bank_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Customer Bank Name"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "users_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Th\u00f4ng tin PM D\u1ef1 \u00c1n"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break",
+   "label": "Th\u00f4ng Tin D\u1ef1 \u00c1n Theo H\u1ee3p \u0110\u1ed3ng"
+  },
+  {
+   "fieldname": "contract_id",
+   "fieldtype": "Link",
+   "label": "Contract ID",
+   "options": "IUNI Contract Master Output"
+  },
+  {
+   "fetch_from": "contract_id.contract_start_date",
+   "fieldname": "contract_start_date",
+   "fieldtype": "Data",
+   "label": "Ng\u00e0y B\u1eaft \u0110\u1ea7u H\u1ee3p \u0110\u1ed3ng",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract_id.contract_end_date",
+   "fieldname": "contract_end_date",
+   "fieldtype": "Data",
+   "label": "Ng\u00e0y K\u1ebft Th\u00fac H\u1ee3p \u0110\u1ed3ng",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_guarantee_end_date",
+   "fieldtype": "Date",
+   "label": "Ng\u00e0y K\u1ebft Th\u00fac B\u1ea3o L\u00e3nh Thanh To\u00e1n"
+  },
+  {
+   "fieldname": "actual_time",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Actual Time (in Hours)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deployment_place",
+   "fieldtype": "Data",
+   "label": "\u0110\u1ecba \u0111i\u1ec3m tri\u1ec3n khai"
+  },
+  {
+   "fieldname": "sow_list",
+   "fieldtype": "Attach",
+   "label": "Danh M\u1ee5c HH/ SOW Tri\u1ec3n Khai"
+  },
+  {
+   "fieldname": "b\u1ea3n_v\u1ebd_tktc_chi_ti\u1ebft",
+   "fieldtype": "Attach",
+   "label": "B\u1ea3n V\u1ebd, TKTC Chi Ti\u1ebft"
+  },
+  {
+   "fieldname": "column_break_39",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "(T\u00ean \u0111\u01a1n v\u1ecb, \u0110\u1ecba ch\u1ec9, D\u1ef1 \u00e1n)",
+   "fieldname": "document_eu",
+   "fieldtype": "Data",
+   "label": "Th\u00f4ng tin C\u1ea5p Ch\u1ee9ng T\u1eeb (CQ/ CNXX)"
+  },
+  {
+   "fetch_from": "contract_id.hsnt",
+   "fieldname": "acceptance_document",
+   "fieldtype": "Small Text",
+   "label": "H\u1ed3 S\u01a1 Nghi\u1ec7m Thu"
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "contract_id.on_site_warranty_iuni",
+   "fieldname": "onsite_warranty_iuni",
+   "fieldtype": "Check",
+   "label": "B\u1ea3o H\u00e0nh Onsite (HH IUNI C\u1ea5p)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "contract_id.on_site_support",
+   "fieldname": "onsite_support_iuni",
+   "fieldtype": "Check",
+   "label": "H\u1ed7 Tr\u1ee3 KT Onsite (DV IUNI c\u1ea5p)",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract_id.on_site_warranty_customer",
+   "fieldname": "warranty_customers_products",
+   "fieldtype": "Data",
+   "label": "H\u1ed7 Tr\u1ee3 B\u1ea3o H\u00e0nh (HH Kh\u00e1ch H\u00e0ng C\u1ea5p)",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract_id.warranty_end_date",
+   "fieldname": "warranty_end_date",
+   "fieldtype": "Data",
+   "label": "Ng\u00e0y K\u1ebft Th\u00fac B\u1ea3o H\u00e0nh",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract_id.support_end_date",
+   "fieldname": "support_end_date",
+   "fieldtype": "Data",
+   "label": "Ng\u00e0y K\u1ebft Th\u00fac H\u1ed7 Tr\u1ee3 KT",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break0",
+   "fieldtype": "Section Break",
+   "label": "Ghi Ch\u00fa D\u1ef1 \u00c1n",
+   "oldfieldtype": "Section Break",
+   "options": "fa fa-list"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes",
+   "oldfieldname": "notes",
+   "oldfieldtype": "Text Editor"
+  },
+  {
+   "fieldname": "company1",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1
+  }
+ ],
+ "icon": "fa fa-puzzle-piece",
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Contract Master",
+   "link_doctype": "IUNI Contract Master Input",
+   "link_fieldname": "project_code"
+  },
+  {
+   "group": "Contract Master",
+   "link_doctype": "IUNI Contract Master Output",
+   "link_fieldname": "project_code"
+  },
+  {
+   "group": "Stock",
+   "link_doctype": "Delivery Note",
+   "link_fieldname": "iuni_project"
+  },
+  {
+   "group": "Stock",
+   "link_doctype": "Purchase Receipt",
+   "link_fieldname": "iuni_project"
+  }
+ ],
+ "max_attachments": 100,
+ "modified": "2022-08-20 08:31:04.029509",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Project",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "project_name,original_customer_code, status, priority",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "project_code",
+ "track_seen": 1
+}

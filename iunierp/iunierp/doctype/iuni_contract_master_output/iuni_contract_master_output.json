@@ -1,0 +1,619 @@
+{
+ "actions": [],
+ "autoname": "format:OUT-{project_code}",
+ "creation": "2022-06-09 08:54:40.315953",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type_of_payment",
+  "posting_date",
+  "company",
+  "payment_type2",
+  "column_break11",
+  "project_code",
+  "project_type",
+  "project_name",
+  "column_break15",
+  "customer_code",
+  "original_customer_code",
+  "end_user_code",
+  "column_break_16",
+  "contract_status",
+  "deployment_site",
+  "over_due_day",
+  "change_in_contract",
+  "change_is_yes",
+  "changing_detail",
+  "contract_number",
+  "contract_no",
+  "contract_start_date",
+  "contract_period",
+  "contract_end_date",
+  "column_break_22",
+  "delivery_period",
+  "delivery_date",
+  "inv_date",
+  "debt_period",
+  "column_break_27",
+  "warranty_period",
+  "warranty_end_date",
+  "support_period",
+  "support_end_date",
+  "column_break21",
+  "on_site_warranty_iuni",
+  "on_site_support",
+  "on_site_warranty_customer",
+  "warranty_remark",
+  "sb_11",
+  "detail",
+  "detailpd",
+  "payment_receipt",
+  "total_amt_a_tax",
+  "total_amt_b_tax",
+  "column_break23",
+  "tax",
+  "average_tax",
+  "cb_1",
+  "received_amt",
+  "remained_amt",
+  "cb_01",
+  "inv_amt",
+  "invoice_remark",
+  "payment_detail",
+  "payment_times",
+  "pmdetail",
+  "guarantee",
+  "bl",
+  "bl_tt",
+  "bl_bh",
+  "bl_dt",
+  "bl_thhd",
+  "document",
+  "file_no",
+  "document_status",
+  "document_sent_date_customer",
+  "document_remark",
+  "column_break2",
+  "contract",
+  "bbbghh",
+  "bbnttl",
+  "phu_luc",
+  "bao_lanh",
+  "other_docs",
+  "column_break_65",
+  "tt_cap_chung_tu",
+  "hsnt",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "type_of_payment",
+   "fieldtype": "Section Break",
+   "label": "General Information"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "payment_type2",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Payment Type",
+   "options": "Receive\nPay",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Code",
+   "options": "IUNI Project",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "project_code.project_type",
+   "fieldname": "project_type",
+   "fieldtype": "Data",
+   "label": "Project Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "project_code.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "project_code.customer_code",
+   "fieldname": "customer_code",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Customer Code",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "project_code.original_customer_code",
+   "fieldname": "original_customer_code",
+   "fieldtype": "Data",
+   "label": "Original Customer Code",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "project_code.eu_code",
+   "fieldname": "end_user_code",
+   "fieldtype": "Data",
+   "label": "End User Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_status",
+   "fieldtype": "Select",
+   "label": "Contract Status",
+   "options": "\nClosed\nIn Process\nPending\nNot yet confirmed\nNot yet signed\nSigned\nClosed, not yet finish deploy\nClosed, not yet finish maintenance"
+  },
+  {
+   "default": "0",
+   "fieldname": "deployment_site",
+   "fieldtype": "Data",
+   "label": "Deployment Site"
+  },
+  {
+   "fieldname": "over_due_day",
+   "fieldtype": "Int",
+   "in_standard_filter": 1,
+   "label": "Payment Overdue Days",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "change_in_contract",
+   "fieldtype": "Section Break",
+   "label": "Contract Change After Signing"
+  },
+  {
+   "default": "0",
+   "fieldname": "change_is_yes",
+   "fieldtype": "Check",
+   "label": "Have Contract Change?"
+  },
+  {
+   "depends_on": "change_is_yes",
+   "fieldname": "changing_detail",
+   "fieldtype": "Table",
+   "label": "Contract Change Detail",
+   "options": "IUNI Contract Changing Detail"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "contract_number",
+   "fieldtype": "Section Break",
+   "label": "Contract Info"
+  },
+  {
+   "fieldname": "contract_no",
+   "fieldtype": "Data",
+   "label": "Contract No.",
+   "unique": 1
+  },
+  {
+   "fieldname": "contract_start_date",
+   "fieldtype": "Date",
+   "label": "Contract Start Date"
+  },
+  {
+   "fieldname": "contract_period",
+   "fieldtype": "Int",
+   "label": "Contract Period (day)"
+  },
+  {
+   "fieldname": "contract_end_date",
+   "fieldtype": "Date",
+   "label": "Contract End Date"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delivery_period",
+   "fieldtype": "Int",
+   "label": "Delivery Period (day)"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery date"
+  },
+  {
+   "fieldname": "inv_date",
+   "fieldtype": "Date",
+   "label": "Invoice Date"
+  },
+  {
+   "fieldname": "debt_period",
+   "fieldtype": "Int",
+   "in_standard_filter": 1,
+   "label": "Debt Period (Day)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "warranty_period",
+   "fieldtype": "Int",
+   "label": "Warranty Period (Month)"
+  },
+  {
+   "fieldname": "warranty_end_date",
+   "fieldtype": "Date",
+   "label": "Warranty End Date"
+  },
+  {
+   "fieldname": "support_period",
+   "fieldtype": "Int",
+   "label": "Maintenance/ Support Period (Month)"
+  },
+  {
+   "fieldname": "support_end_date",
+   "fieldtype": "Date",
+   "label": "Maintenance/ Support End Date"
+  },
+  {
+   "fieldname": "column_break21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "on_site_warranty_iuni",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "Onsite Warranty (IUNI's items) "
+  },
+  {
+   "default": "0",
+   "fieldname": "on_site_support",
+   "fieldtype": "Check",
+   "label": "Onsite Support (IUNI's service)"
+  },
+  {
+   "fieldname": "on_site_warranty_customer",
+   "fieldtype": "Select",
+   "label": "Warranty Support (Customer's items)",
+   "options": "No\nYes\nOnsite"
+  },
+  {
+   "fieldname": "warranty_remark",
+   "fieldtype": "Small Text",
+   "label": "Warranty Remark"
+  },
+  {
+   "fieldname": "sb_11",
+   "fieldtype": "Section Break",
+   "label": "Contract Detail"
+  },
+  {
+   "fieldname": "detail",
+   "fieldtype": "Table",
+   "label": "Detailed Amt Before VAT",
+   "options": "IUNI Output Ingredient Amt",
+   "reqd": 1
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "detailpd",
+   "fieldtype": "Table",
+   "label": "Contract List Detail",
+   "options": "IUNI Contract Master Output_Product Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_receipt",
+   "fieldtype": "Section Break",
+   "label": "Contract Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amt_a_tax",
+   "fieldtype": "Currency",
+   "label": "Total Amt After VAT",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amt_b_tax",
+   "fieldtype": "Currency",
+   "label": "Total Amt Before VAT",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Currency",
+   "label": "VAT Amt",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "average_tax",
+   "fieldtype": "Float",
+   "label": "% Average VAT",
+   "precision": "4",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "received_amt",
+   "fieldtype": "Currency",
+   "label": "Received Amt",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remained_amt",
+   "fieldtype": "Currency",
+   "label": "Remained Amt",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inv_amt",
+   "fieldtype": "Currency",
+   "label": "Invoiced Amount",
+   "precision": "0"
+  },
+  {
+   "fieldname": "invoice_remark",
+   "fieldtype": "Data",
+   "label": "Invoice Remark"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "payment_detail",
+   "fieldtype": "Section Break",
+   "label": "Payment Detail"
+  },
+  {
+   "fieldname": "payment_times",
+   "fieldtype": "Select",
+   "label": "Payment Times",
+   "options": "1\n2\n3\n4\n5"
+  },
+  {
+   "depends_on": "eval:(in_list([\"1\", \"2\", \"3\", \"4\"], doc.payment_times))",
+   "fieldname": "pmdetail",
+   "fieldtype": "Table",
+   "label": "Payment Schedule",
+   "options": "IUNI Output Payment Schedule"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "guarantee",
+   "fieldtype": "Section Break",
+   "label": "B\u00e3o L\u00e3nh"
+  },
+  {
+   "fieldname": "bl",
+   "fieldtype": "Select",
+   "label": "B\u1ea3o l\u00e3nh",
+   "options": "No\nYes"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Yes\"], doc.bl))",
+   "fieldname": "bl_tt",
+   "fieldtype": "Table",
+   "label": "B\u1ea3o L\u00e3nh Thanh To\u00e1n",
+   "options": "IUNI Detail Payment Guarantee"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Yes\"], doc.bl))",
+   "fieldname": "bl_bh",
+   "fieldtype": "Table",
+   "label": "B\u1ea3o L\u00e3nh B\u1ea3o H\u00e0nh",
+   "options": "IUNI Detail Warranty Guarantee"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Yes\"], doc.bl))",
+   "fieldname": "bl_dt",
+   "fieldtype": "Table",
+   "label": "B\u1ea3o L\u00e3nh D\u1ef1 Th\u1ea7u",
+   "options": "IUNI Detail Bid Guarantee"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Yes\"], doc.bl))",
+   "fieldname": "bl_thhd",
+   "fieldtype": "Table",
+   "label": "B\u1ea3o L\u00e3nh Th\u1ef1c Hi\u1ec7n H\u1ee3p \u0110\u1ed3ng",
+   "options": "IUNI Detail Contract Guarantee"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "document",
+   "fieldtype": "Section Break",
+   "label": "Document"
+  },
+  {
+   "fieldname": "file_no",
+   "fieldtype": "Data",
+   "label": "File No."
+  },
+  {
+   "fieldname": "document_status",
+   "fieldtype": "Select",
+   "label": "Document Status",
+   "options": "\n\u0110\u1ee7\nThi\u1ebfu\nCh\u01b0a nh\u1eadn"
+  },
+  {
+   "fieldname": "document_sent_date_customer",
+   "fieldtype": "Date",
+   "label": "Document Sent Date (To Customer)"
+  },
+  {
+   "fieldname": "document_remark",
+   "fieldtype": "Small Text",
+   "label": "Document Remark"
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "contract",
+   "fieldtype": "Check",
+   "label": "Contract"
+  },
+  {
+   "default": "0",
+   "fieldname": "bbbghh",
+   "fieldtype": "Check",
+   "label": "BBBGHH"
+  },
+  {
+   "default": "0",
+   "fieldname": "bbnttl",
+   "fieldtype": "Check",
+   "label": "BBNTTL"
+  },
+  {
+   "default": "0",
+   "fieldname": "phu_luc",
+   "fieldtype": "Check",
+   "label": "Ph\u1ee5 l\u1ee5c"
+  },
+  {
+   "default": "0",
+   "fieldname": "bao_lanh",
+   "fieldtype": "Check",
+   "label": "B\u1ea3o l\u00e3nh"
+  },
+  {
+   "fieldname": "other_docs",
+   "fieldtype": "Small Text",
+   "label": "Other Docs"
+  },
+  {
+   "fieldname": "column_break_65",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "(T\u00ean \u0111\u01a1n v\u1ecb, \u0110\u1ecba ch\u1ec9, D\u1ef1 \u00e1n)",
+   "fieldname": "tt_cap_chung_tu",
+   "fieldtype": "Data",
+   "label": "Th\u00f4ng Tin C\u1ea5p Ch\u1ee9ng T\u1eeb (CQ, CNXX)"
+  },
+  {
+   "fieldname": "hsnt",
+   "fieldtype": "Text",
+   "label": "H\u1ed3 S\u01a1 Nghi\u1ec7m Thu"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IUNI Contract Master Output",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:07.104502",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Contract Master Output",
+ "name_case": "UPPER CASE",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Admin MNG",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Admin MNG",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

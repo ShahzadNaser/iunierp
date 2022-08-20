@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "pd_name",
+ "creation": "2022-06-25 10:54:49.515668",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pd_name",
+  "description",
+  "model",
+  "brand",
+  "uom",
+  "amount"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "pd_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "T\u00ean HH/DV",
+   "length": 1000
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "M\u00f4 t\u1ea3",
+   "length": 1000
+  },
+  {
+   "columns": 1,
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Model"
+  },
+  {
+   "columns": 1,
+   "fieldname": "brand",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "HSX/ Th\u01b0\u01a1ng hi\u1ec7u"
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0110VT"
+  },
+  {
+   "columns": 1,
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "SL",
+   "precision": "1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:10.674470",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Project Contract List Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

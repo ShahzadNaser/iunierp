@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "pd_name",
+ "creation": "2022-06-20 17:43:22.351520",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pd_name",
+  "description",
+  "model",
+  "brand",
+  "uom",
+  "amount",
+  "no_inv",
+  "column_break_10",
+  "price",
+  "amt_b_tax_ct",
+  "tax",
+  "tax_amt_ct",
+  "price_a_tax",
+  "amt_a_tax_ct",
+  "type"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "pd_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "T\u00ean HH/DV",
+   "length": 1000
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "M\u00f4 t\u1ea3",
+   "length": 1000
+  },
+  {
+   "columns": 1,
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Model"
+  },
+  {
+   "columns": 1,
+   "fieldname": "brand",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "HSX/ Th\u01b0\u01a1ng hi\u1ec7u"
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0110VT"
+  },
+  {
+   "columns": 1,
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "SL",
+   "precision": "1"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "no_inv",
+   "fieldtype": "Check",
+   "label": "Ko H\u0110"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "\u0110G tr\u01b0\u1edbc thu\u1ebf",
+   "precision": "9"
+  },
+  {
+   "fieldname": "amt_b_tax_ct",
+   "fieldtype": "Float",
+   "label": "TT tr\u01b0\u1edbc thu\u1ebf",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "default": "0.1",
+   "fieldname": "tax",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "% VAT",
+   "options": "\n0.1\n0.08",
+   "precision": "3"
+  },
+  {
+   "fieldname": "tax_amt_ct",
+   "fieldtype": "Float",
+   "label": "VAT Amt",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "price_a_tax",
+   "fieldtype": "Float",
+   "label": "\u0110G sau thu\u1ebf",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amt_a_tax_ct",
+   "fieldtype": "Float",
+   "label": "TT sau thu\u1ebf",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "\nIntergration/ Training\nMaintenance/ Support"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:14.421327",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Contract Master Output_Product Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

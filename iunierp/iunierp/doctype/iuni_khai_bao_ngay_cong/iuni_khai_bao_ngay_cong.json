@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{employee_name}-{posting_date}",
+ "creation": "2022-07-11 14:08:08.248326",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "employee_name",
+  "department",
+  "sb1",
+  "type",
+  "l\u00fd_do_ghi_ch\u00fa",
+  "cb1",
+  "project_code",
+  "from_date",
+  "to_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Ng\u00e0y \u0111\u0103ng k\u00ed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Link",
+   "label": "T\u00ean nh\u00e2n vi\u00ean",
+   "options": "IUNI Employee"
+  },
+  {
+   "fetch_from": "employee_name.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Ph\u00f2ng ban"
+  },
+  {
+   "fieldname": "sb1",
+   "fieldtype": "Section Break",
+   "label": "H\u00ecnh th\u1ee9c khai b\u00e1o"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "H\u00ecnh th\u1ee9c khai b\u00e1o",
+   "options": "C\u00f4ng t\u00e1c nhi\u1ec1u ng\u00e0y (\u1edf qua \u0111\u00eam)\nC\u00f4ng t\u00e1c trong ng\u00e0y\nNgh\u1ec9 ph\u00e9p\nNgh\u1ec9 ph\u00e9p (0.25 ng\u00e0y)\nNgh\u1ec9 ph\u00e9p (0.5 ng\u00e0y)\nL\u00e0m ngo\u00e0i gi\u1edd (0.5 ng\u00e0y)\nL\u00e0m ngo\u00e0i gi\u1edd (1 ng\u00e0y)\n\u0110i mu\u1ed9n (vi\u1ec7c c\u00f4ng ty)\nV\u1ec1 s\u1edbm (vi\u1ec7c c\u00f4ng ty)"
+  },
+  {
+   "fieldname": "l\u00fd_do_ghi_ch\u00fa",
+   "fieldtype": "Small Text",
+   "label": "L\u00fd do/ Ghi ch\u00fa"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "label": "M\u00e3 d\u1ef1 \u00e1n",
+   "options": "IUNI Project"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "T\u1eeb ng\u00e0y"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "\u0110\u1ebfn ng\u00e0y"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IUNI Khai Bao Ngay Cong",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:35:03.937813",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Khai Bao Ngay Cong",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

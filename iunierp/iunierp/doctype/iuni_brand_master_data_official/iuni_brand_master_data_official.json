@@ -1,0 +1,194 @@
+{
+ "actions": [],
+ "creation": "2022-04-28 14:51:04.887431",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "brand",
+  "supplier_group",
+  "column_break4",
+  "manufacturer",
+  "area",
+  "section_break1",
+  "co",
+  "cq",
+  "tkhq",
+  "pl",
+  "ci",
+  "bl",
+  "cnxxpxk",
+  "column_break5",
+  "rmk1",
+  "rmk2",
+  "rmk3",
+  "rmk4",
+  "rmk5",
+  "rmk6",
+  "section_break7",
+  "remark"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Brand",
+   "options": "Brand",
+   "search_index": 1,
+   "width": "100px"
+  },
+  {
+   "columns": 2,
+   "fieldname": "supplier_group",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Supplier Group",
+   "options": "Supplier Group",
+   "search_index": 1,
+   "width": "100px"
+  },
+  {
+   "fieldname": "column_break4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "brand.manufacturer",
+   "fieldname": "manufacturer",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Manufacturer"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Area",
+   "options": "Mien Bac\nMien Nam\nMien Trung\nAll"
+  },
+  {
+   "fieldname": "section_break1",
+   "fieldtype": "Section Break",
+   "label": "Document"
+  },
+  {
+   "bold": 1,
+   "fieldname": "co",
+   "fieldtype": "Select",
+   "label": "CO",
+   "options": "Kh\u00f4ng c\u00f3\nKh\u00f4ng c\u1ea5p\nPTMCN c\u1ea5p\nHSX c\u1ea5p"
+  },
+  {
+   "bold": 1,
+   "fieldname": "cq",
+   "fieldtype": "Select",
+   "label": "CQ",
+   "options": "Kh\u00f4ng c\u00f3\nKh\u00f4ng c\u1ea5p\nHSX c\u1ea5p\nNPP/NNKTT \u1ee7y quy\u1ec1n c\u1ea5p"
+  },
+  {
+   "bold": 1,
+   "fieldname": "tkhq",
+   "fieldtype": "Select",
+   "label": "TKHQ",
+   "options": "Kh\u00f4ng c\u00f3\nKh\u00f4ng c\u1ea5p\nC\u1ea5p sao y NNK tr\u1ef1c ti\u1ebfp"
+  },
+  {
+   "bold": 1,
+   "fieldname": "pl",
+   "fieldtype": "Select",
+   "label": "PL",
+   "options": "Kh\u00f4ng c\u00f3\nKh\u00f4ng c\u1ea5p\nC\u1ea5p sao y NNK tr\u1ef1c ti\u1ebfp"
+  },
+  {
+   "bold": 1,
+   "fieldname": "ci",
+   "fieldtype": "Select",
+   "label": "CI",
+   "options": "Kh\u00f4ng c\u00f3\nKh\u00f4ng c\u1ea5p\nC\u1ea5p sao y NNK tr\u1ef1c ti\u1ebfp"
+  },
+  {
+   "bold": 1,
+   "fieldname": "bl",
+   "fieldtype": "Select",
+   "label": "BL",
+   "options": "Kh\u00f4ng c\u00f3\nKh\u00f4ng c\u1ea5p\nC\u1ea5p sao y NNK tr\u1ef1c ti\u1ebfp"
+  },
+  {
+   "description": "(Gi\u1ea5y Ch\u1ee9ng nh\u1eadn xu\u1ea5t x\u01b0\u1edfng/Phi\u1ebfu xu\u1ea5t kho)",
+   "fieldname": "cnxxpxk",
+   "fieldtype": "Select",
+   "label": "CNXX/PXK",
+   "options": "Kh\u00f4ng c\u00f3\nKh\u00f4ng c\u1ea5p\nHSX c\u1ea5p, c\u00f4ng ch\u1ee9ng \u0111\u01b0\u1ee3c\nHSX c\u1ea5p, kh\u00f4ng c\u00f4ng ch\u1ee9ng \u0111\u01b0\u1ee3c"
+  },
+  {
+   "fieldname": "column_break5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rmk1",
+   "fieldtype": "Data",
+   "label": "Remark CO"
+  },
+  {
+   "fieldname": "rmk2",
+   "fieldtype": "Data",
+   "label": "Remark CQ"
+  },
+  {
+   "fieldname": "rmk3",
+   "fieldtype": "Data",
+   "label": "Remark TKHQ"
+  },
+  {
+   "fieldname": "rmk4",
+   "fieldtype": "Data",
+   "label": "Remark PL"
+  },
+  {
+   "fieldname": "rmk5",
+   "fieldtype": "Data",
+   "label": "Remark CI"
+  },
+  {
+   "fieldname": "rmk6",
+   "fieldtype": "Data",
+   "label": "Remark BL"
+  },
+  {
+   "fieldname": "section_break7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Remark",
+   "translatable": 1,
+   "width": "100px"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:01.670823",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Brand Master Data Official",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

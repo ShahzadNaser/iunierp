@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "creation": "2021-08-25 15:04:15.004474",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "cp",
+  "name_cp",
+  "project",
+  "noi_dung",
+  "sb_01",
+  "uom",
+  "qty",
+  "rate",
+  "amount",
+  "price_b_tax",
+  "amt_b_tax_ct",
+  "tax",
+  "no_inv"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "cp",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "M\u00e3 CP",
+   "options": "IUNI Ma CP",
+   "width": "1000px"
+  },
+  {
+   "fetch_from": "cp.name_cp",
+   "fieldname": "name_cp",
+   "fieldtype": "Data",
+   "label": "T\u00ean M\u00e3 CP"
+  },
+  {
+   "columns": 1,
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "D\u1ef1 \u00c1n",
+   "options": "IUNI Project",
+   "width": "100px"
+  },
+  {
+   "columns": 2,
+   "fieldname": "noi_dung",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "N\u1ed9i Dung",
+   "length": 1000,
+   "width": "1000px"
+  },
+  {
+   "fieldname": "sb_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0110VT"
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "SL",
+   "precision": "1",
+   "search_index": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "columns": 1,
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "\u0110G sau thu\u1ebf",
+   "precision": "0"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "columns": 1,
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "TT sau thu\u1ebf",
+   "precision": "0",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "price_b_tax",
+   "fieldtype": "Float",
+   "label": "\u0110G Tr\u01b0\u1edbc Thu\u1ebf",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amt_b_tax_ct",
+   "fieldtype": "Float",
+   "label": "TT Tr\u01b0\u1edbc Thu\u1ebf",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "default": "0.1",
+   "fieldname": "tax",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Thu\u1ebf",
+   "options": "\n0.1\n0.08\n0.05",
+   "width": "1000px"
+  },
+  {
+   "columns": 1,
+   "default": "1",
+   "fieldname": "no_inv",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Ko H\u0110"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:12.708829",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Chi tiet de nghi",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

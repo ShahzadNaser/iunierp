@@ -1,0 +1,559 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:IN-{party_code}-{#}",
+ "creation": "2021-10-12 17:17:43.597969",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type_of_payment",
+  "posting_date",
+  "company",
+  "project_code",
+  "contract_status",
+  "role",
+  "column_break11",
+  "party_code",
+  "supplier_name2",
+  "tax_id",
+  "bank_acc_no",
+  "bank_name",
+  "column_break21",
+  "payment_type2",
+  "mode_payment",
+  "private_acc_bank",
+  "content",
+  "contract_info",
+  "contract_no",
+  "contract_start_date",
+  "column_break8",
+  "delivery_period",
+  "estimate_delivery_date",
+  "actual_delivery_date",
+  "column_break2",
+  "percent_phi_hd",
+  "amt_phi_hd",
+  "back_amt_supplier",
+  "payment_detail",
+  "detailpd",
+  "paid_info",
+  "total_amt_a_tax",
+  "total_amt_b_tax",
+  "cb_01",
+  "tax",
+  "average_tax",
+  "cb_03",
+  "paid_amt",
+  "remained_amt",
+  "sb_111",
+  "payment_times",
+  "detail_amt",
+  "document",
+  "file_no",
+  "document_reference",
+  "kt_receipt_doc",
+  "doc_remark",
+  "cb_02",
+  "product_type",
+  "hdong",
+  "cnxx",
+  "cocq",
+  "import_docs",
+  "bbbghh",
+  "invoice",
+  "changing_in_contract",
+  "change_is_yes",
+  "changing_detail",
+  "more_infor",
+  "contract_remark",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "type_of_payment",
+   "fieldtype": "Section Break",
+   "label": "General Information"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Select",
+   "label": "Company",
+   "options": "IUNI\nELIZA",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project Code",
+   "options": "IUNI Project",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "contract_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Contract Status",
+   "options": "Not yet signed\nSigned\nCancelled\nPending\nClosed\nNo contract"
+  },
+  {
+   "default": "IUNI Admin Input",
+   "fieldname": "role",
+   "fieldtype": "Link",
+   "label": "Role",
+   "options": "Role"
+  },
+  {
+   "fieldname": "column_break11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "party_code",
+   "fieldtype": "Link",
+   "label": "Supplier Code",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "party_code.supplier_name2",
+   "fieldname": "supplier_name2",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "party_code.tax_id",
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Supplier Tax ID",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "party_code.bank_account_no",
+   "fetch_if_empty": 1,
+   "fieldname": "bank_acc_no",
+   "fieldtype": "Data",
+   "label": "Bank Acc No",
+   "translatable": 1
+  },
+  {
+   "fetch_from": "party_code.bank_name",
+   "fetch_if_empty": 1,
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "column_break21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "payment_type2",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Payment Type",
+   "options": "Ch\u00ednh\nPh\u1ee5 Cty\nPh\u1ee5 Cn",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "mode_payment",
+   "fieldtype": "Select",
+   "label": "Mode of Payment",
+   "options": "CK Cty\nCK Cn\nCK Cn IUNI",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:(in_list([\"CK Cn\", \"CK Cn IUNI\"], doc.mode_payment))",
+   "description": "V\u00ed d\u1ee5: Techcombank_1938217526712_Nguy\u1ec5n V\u0103n A",
+   "fieldname": "private_acc_bank",
+   "fieldtype": "Data",
+   "label": "STK C\u00e1 Nh\u00e2n"
+  },
+  {
+   "description": "V\u00ed d\u1ee5: HH_T\u1ee7 rack/ PM_Wmware",
+   "fieldname": "content",
+   "fieldtype": "Data",
+   "label": "Content"
+  },
+  {
+   "fieldname": "contract_info",
+   "fieldtype": "Section Break",
+   "label": "Contract Info"
+  },
+  {
+   "fieldname": "contract_no",
+   "fieldtype": "Data",
+   "label": "Contract No."
+  },
+  {
+   "fieldname": "contract_start_date",
+   "fieldtype": "Date",
+   "label": "Contract Start Date"
+  },
+  {
+   "fieldname": "column_break8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Ch\u00ednh\"], doc.payment_type2))",
+   "fieldname": "delivery_period",
+   "fieldtype": "Int",
+   "label": "Delivery Period (Day)"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Ch\u00ednh\"], doc.payment_type2))",
+   "fieldname": "estimate_delivery_date",
+   "fieldtype": "Date",
+   "label": "Est. Delivery Date"
+  },
+  {
+   "depends_on": "eval:(in_list([\"Ch\u00ednh\"], doc.payment_type2))",
+   "fieldname": "actual_delivery_date",
+   "fieldtype": "Date",
+   "label": "Actual Delivery Date"
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:(in_list([\"Ph\u1ee5 Cty\",\"Ph\u1ee5 Cn\"], doc.payment_type2))",
+   "description": "(T\u00ednh tr\u00ean Total Amt Before VAT)",
+   "fieldname": "percent_phi_hd",
+   "fieldtype": "Percent",
+   "label": "% Ph\u00ed",
+   "precision": "9"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:(in_list([\"Ph\u1ee5 Cty\",\"Ph\u1ee5 Cn\"], doc.payment_type2))",
+   "fieldname": "amt_phi_hd",
+   "fieldtype": "Float",
+   "label": "Ph\u00ed",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:(in_list([\"Ph\u1ee5 Cty\"], doc.payment_type2))",
+   "fieldname": "back_amt_supplier",
+   "fieldtype": "Float",
+   "label": "Back Amt (Supplier)",
+   "precision": "0"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "payment_detail",
+   "fieldtype": "Section Break",
+   "label": "Contract Detail"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "detailpd",
+   "fieldtype": "Table",
+   "label": "Contract List Detail",
+   "options": "IUNI Contract Master Input_Product Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "paid_info",
+   "fieldtype": "Section Break",
+   "label": "Payment Info"
+  },
+  {
+   "fieldname": "total_amt_a_tax",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Total Amt After Tax",
+   "precision": "0",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "total_amt_b_tax",
+   "fieldtype": "Float",
+   "label": "Total Amt Before Tax",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Float",
+   "label": "VAT Amt",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "average_tax",
+   "fieldtype": "Float",
+   "label": "% Average VAT",
+   "length": 4,
+   "precision": "4",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_03",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "paid_amt",
+   "fieldtype": "Float",
+   "label": "Paid Amt",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remained_amt",
+   "fieldtype": "Float",
+   "label": "Remained Amt",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_111",
+   "fieldtype": "Section Break",
+   "label": "Payment Detail"
+  },
+  {
+   "fieldname": "payment_times",
+   "fieldtype": "Select",
+   "label": "Payment Times",
+   "options": "1\n2\n3\n4\n5\n0"
+  },
+  {
+   "depends_on": "eval:(in_list([\"1\", \"2\", \"3\", \"4\"], doc.payment_times))",
+   "fieldname": "detail_amt",
+   "fieldtype": "Table",
+   "label": "Payment Schedule",
+   "options": "IUNI Input Detailed Payment"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Section Break",
+   "label": "Document"
+  },
+  {
+   "fieldname": "file_no",
+   "fieldtype": "Data",
+   "label": "File No."
+  },
+  {
+   "fieldname": "document_reference",
+   "fieldtype": "Select",
+   "label": "Document Status (Admin)",
+   "options": "\n\u0110\u1ee7, \u0110\u00fang\n\u0110\u1ee7\nThi\u1ebfu\nCh\u01b0a nh\u1eadn"
+  },
+  {
+   "default": "0",
+   "fieldname": "kt_receipt_doc",
+   "fieldtype": "Check",
+   "label": "KT nh\u1eadn \u0111\u1ee7 ch\u1ee9ng t\u1eeb"
+  },
+  {
+   "fieldname": "doc_remark",
+   "fieldtype": "Data",
+   "label": "Document Remark"
+  },
+  {
+   "fieldname": "cb_02",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "product_type",
+   "fieldtype": "Select",
+   "label": "Product type",
+   "options": "\nNh\u1eadp kh\u1ea9u\nVi\u1ec7t Nam\nC\u1ea3 2\nKh\u00e1c (d\u1ecbch v\u1ee5 ...)"
+  },
+  {
+   "default": "0",
+   "fieldname": "hdong",
+   "fieldtype": "Check",
+   "label": "\u0110\u0110H/ H\u0110\u1ed3ng"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:(in_list([\"Vi\u1ec7t Nam\", \"C\u1ea3 2\", \"Kh\u00e1c (d\u1ecbch v\u1ee5 ...)\"], doc.product_type))",
+   "fieldname": "cnxx",
+   "fieldtype": "Check",
+   "label": "Ch\u1ee9ng nh\u1eadn xu\u1ea5t x\u01b0\u1edfng"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:(in_list([\"Nh\u1eadp kh\u1ea9u\", \"C\u1ea3 2\",\"Kh\u00e1c (d\u1ecbch v\u1ee5 ...)\"], doc.product_type))",
+   "fieldname": "cocq",
+   "fieldtype": "Check",
+   "label": "CO (P.TMCN), CQ (HSX)"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:(in_list([\"Nh\u1eadp kh\u1ea9u\", \"C\u1ea3 2\",\"Kh\u00e1c (d\u1ecbch v\u1ee5 ...)\"], doc.product_type))",
+   "fieldname": "import_docs",
+   "fieldtype": "Check",
+   "label": "Import Docs (BL, PL, TKHQ, Invoice)"
+  },
+  {
+   "default": "0",
+   "fieldname": "bbbghh",
+   "fieldtype": "Check",
+   "label": "BBBGHH/ BBNTTL"
+  },
+  {
+   "default": "0",
+   "fieldname": "invoice",
+   "fieldtype": "Check",
+   "label": "Invoice"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "changing_in_contract",
+   "fieldtype": "Section Break",
+   "label": "Contract Change After Signing"
+  },
+  {
+   "default": "0",
+   "fieldname": "change_is_yes",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Have Contract Change?"
+  },
+  {
+   "depends_on": "change_is_yes",
+   "fieldname": "changing_detail",
+   "fieldtype": "Table",
+   "label": "Contract Change Detail",
+   "options": "IUNI Contract Changing Detail"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_infor",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "contract_remark",
+   "fieldtype": "Text Editor",
+   "label": "Contract Remark"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IUNI Contract Master Input",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-20 08:31:04.936863",
+ "modified_by": "Administrator",
+ "module": "Iunierp",
+ "name": "IUNI Contract Master Input",
+ "name_case": "UPPER CASE",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Account",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Account MNG",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Admin MNG",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Admin Input",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "IUNI Admin NB",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
